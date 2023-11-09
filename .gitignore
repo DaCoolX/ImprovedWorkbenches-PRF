@@ -291,3 +291,4 @@ __pycache__/
 ThirdParty/HugsLib.xml
 dist/
 /ThirdParty/
+/CustomPath.txt

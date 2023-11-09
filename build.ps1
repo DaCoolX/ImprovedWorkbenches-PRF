@@ -53,6 +53,14 @@ function getInstallDir
         return $installDir
     }
 
+    Write-Host "Checking for CustomPath"
+    if (Test-Path "$PSScriptRoot\CustomPath.txt")
+    {
+        $installDir = (Get-Content "$PSScriptRoot\CustomPath.txt" -TotalCount 1).Trim().Trim('"')
+        Write-Host "CustomPath for RimWorld installation set to $installDir"
+        return $installDir
+    }
+
     Write-Host "RimWorld not found"
     return $null
 }
@@ -158,7 +166,7 @@ function doPostBuild
     $version = $matches[1]
     $distZip = "$distDir\$targetName.$version.zip"
     removePath $distZip
-    $sevenZip = "$PSScriptRoot\7z.exe"
+    $sevenZip = "$PSScriptRoot\7za.exe"
     & $sevenZip a -mx=9 "$distZip" "$distDir\*"
     if ($LASTEXITCODE -ne 0)
     {

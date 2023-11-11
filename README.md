@@ -1,7 +1,7 @@
 ##
 
 This fork exists because development upstream seems to have slowed down but there are some fixes in the PR's and some forks that I'd like to pull in, build and publish.  
-Most notably and as the name of the fork implies, Project RimWorldFactory compatibility, made by @rli-efrantz
+Most notably and as the name of the fork implies, Project RimWorldFactory compatibility, made by [rli-efrantz](https://github.com/rli-efrantz)
 
 # Building
 
